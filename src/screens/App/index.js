@@ -11,8 +11,8 @@ class App extends Component {
       <Wrapper>
         <HeaderText>Kelsonic</HeaderText>
         <Stars movementRate={1} />
+        <Stars movementRate={1.5} />
         <Stars movementRate={2} />
-        <Stars movementRate={3} />
       </Wrapper>
     );
   }
