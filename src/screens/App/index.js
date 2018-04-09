@@ -25,11 +25,7 @@ class App extends Component {
             <LogoLink href="https://www.linkedin.com/in/kelsonic"><Logo alt="linkedin" src={linkedIn} /></LogoLink>
           </Logos>
         </SectionOne>
-        <SectionTwo>
-          <Planet>
-
-          </Planet>
-        </SectionTwo>
+        <Planet />
       </Wrapper>
     );
   }
@@ -63,11 +59,13 @@ const Logo = styled.img`
 `;
 
 const Planet = styled.div`
-  background: #005e92;
+  background: #0067a0;
   border-radius: 100%;
   height: 250px;
-  top: -50px;
-  position: relative;
+  bottom: -200px;
+  left: -25vw
+  overflow: hidden;
+  position: absolute;
   width: 150%;
 `;
 
@@ -83,18 +81,12 @@ const SectionOne = Section.extend`
   height: 100vh;
 `;
 
-const SectionTwo = Section.extend`
-  background: linear-gradient(0deg, #28698c 30%, #1d4a63 100%);
-  justify-content: flex-start;
-  height: 100vh;
-`;
-
 const Wrapper = styled.div`
-  background: linear-gradient(0deg, #28698c 30%, #000 100%);
+  background: linear-gradient(0deg, #28698c 0%, #000 40%, #000 100%);
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
-  overflow-y: auto;
+  height: 100vh;
+  overflow: hidden;
   width: 100%;
 `;
 
