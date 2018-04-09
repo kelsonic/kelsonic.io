@@ -11,7 +11,6 @@ const colors = ['#ddd', '#ccc', '#eee', '#ff6060', '#45bb50', '#b7bb45'];
 class Particle extends Component {
   static propTypes = {
     id: PropTypes.string.isRequired,
-    maxPositionY: PropTypes.number.isRequired,
     positionX: PropTypes.number.isRequired,
     removeSelfFromDOM: PropTypes.func.isRequired,
   };
@@ -23,7 +22,7 @@ class Particle extends Component {
     this.state = {
       askedToBeRemoved: false,
       backgroundColor: sample(colors),
-      maxPositionY: props.maxPositionY,
+      maxPositionY: window.innerHeight || 500,
       positionX: props.positionX,
       positionY: 0,
       sizeMultiplier: depth,
@@ -35,15 +34,22 @@ class Particle extends Component {
     this.interval = setInterval(this.move, 0);
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState.positionY !== this.state.positionY) {
+      return true;
+    }
+    return false;
+  }
+
   componentWillUnmount() {
     clearInterval(this.interval);
   }
 
   move = () => {
     // HOT CODE!!!!
-    const { positionY: oldPositionY, speed } = this.state;
+    const { maxPositionY, positionY: oldPositionY, speed } = this.state;
     const positionY = oldPositionY + speed;
-    if (positionY > this.props.maxPositionY) {
+    if (positionY > maxPositionY ) {
       this.props.removeSelfFromDOM(this.props.id);
       return;
     }
