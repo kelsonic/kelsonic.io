@@ -9,7 +9,8 @@
     "react-plx": "^1.1.1",
     "react-scripts": "1.1.4",
     "sanitize.css": "^5.0.0",
-    "styled-components": "^3.2.5"
+    "styled-components": "^3.2.5",
+    "uuid": "^3.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -2,30 +2,28 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 // Externals
-import Stars from '../../components/Stars';
+import Particles from '../../components/Particles';
 
 
 class App extends Component {
   render() {
     return (
       <Wrapper>
+        <Particles />
         <HeaderText>Kelsonic</HeaderText>
-        <Stars movementRate={1} />
-        <Stars movementRate={1.5} />
-        <Stars movementRate={2} />
       </Wrapper>
     );
   }
 }
 
 const HeaderText = styled.h1`
-  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
   color: #ffffff;
   z-index: 1;
 `;
 
 const Wrapper = styled.div`
   align-items: center;
+  background-image: linear-gradient(135deg, #444 0%, #333 25%, #222 50%, #111 75%, #000 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
