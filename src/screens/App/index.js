@@ -33,12 +33,14 @@ class App extends Component {
 
 const HeaderText = styled.h1`
   color: #ffffff;
+  font-size: 2.5rem;
   margin: 0 0 20px;
   z-index: 1;
 `;
 
 const HeaderSubtext = styled.p`
   color: #eaeaea;
+  font-size: 1.1rem;
   z-index: 1;
 `;
 
