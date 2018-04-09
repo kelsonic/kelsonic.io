@@ -23,7 +23,7 @@ class Stars extends Component {
   constructor(props) {
     super(props);
     const maxPositionY = window.innerHeight || 300;
-    const positionXs = sampleSize(range(1, 101), props.amount);
+    const positionXs = sampleSize(range(1, 101, true), props.amount);
 
     this.state = {
       bgPositionY: -maxPositionY,
@@ -68,12 +68,13 @@ class Stars extends Component {
   }
 
   render() {
+    const { movementRate } = this.props;
     const { bgPositionY, stars } = this.state;
 
     return (
       <Wrapper>
         {map(stars, ({ id, positionX, positionY }) => (
-          <Star key={id} positionX={positionX} positionY={positionY + bgPositionY} />
+          <Star key={id} positionX={positionX} positionY={positionY + bgPositionY} sizeMultiplier={movementRate} />
         ))}
       </Wrapper>
     );
