@@ -65,8 +65,10 @@ const Planet = styled.div`
   border-radius: 100%;
   height: 250px;
   bottom: -200px;
-  left: -25vw
+  left: -25vw;
   overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
   position: absolute;
   width: 150%;
 `;
@@ -89,6 +91,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  touch-action: none;
   width: 100%;
 `;
 
